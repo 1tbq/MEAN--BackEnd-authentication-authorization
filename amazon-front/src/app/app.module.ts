@@ -7,12 +7,19 @@ import { AuthModule } from './auth/auth.module';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms'
 import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ShopComponent } from './shop/shop.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { ToolBarComponent } from './tool-bar/tool-bar.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ShopComponent,
+    ToolBarComponent
   ],
   imports: [
+    NgbModule,
     BrowserModule,
     AppRoutingModule,
     AuthModule,
