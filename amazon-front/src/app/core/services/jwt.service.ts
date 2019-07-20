@@ -8,12 +8,12 @@ export class JwtService {
   constructor() { }
 
   setToken(token:string){
-    window.localStorage.setItem('jwt-token',token);
+    window.localStorage.setItem('jwt_token',token);
   }
   getToken(){
-    return window.localStorage.getItem('jwt-token');
+    return window.localStorage.getItem('jwt_token');
   }
   distroyToken(){
-    window.localStorage.removeItem('jwt-token');
+    window.localStorage.removeItem('jwt_token');
   }
 }

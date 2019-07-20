@@ -46,4 +46,13 @@ onSubmit(){
       password:['',Validators.required]
     })
   }
+
+googleAuthHandler(){
+  
+}
+
+forgotPassword(){
+  console.log("clicked forgot passwrod")
+}
+
 }

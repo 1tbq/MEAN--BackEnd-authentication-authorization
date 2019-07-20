@@ -13,11 +13,6 @@ mongoose.connect(config.database, { useNewUrlParser: true }, (error) => {
     }
 });
 
-
-app.get('/', (req, res, next) => {
-    console.log('hi from req');
-    res.json('hi from server.js');
-});
 //Register global middlewares
 setGlobalMiddleware(app);
 app.use('/api', restRouter);

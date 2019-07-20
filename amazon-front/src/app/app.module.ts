@@ -6,17 +6,18 @@ import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms'
 import { CoreModule } from './core/core.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ShopComponent } from './shop/shop.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ToolBarComponent } from './tool-bar/tool-bar.component';
+import { HttpInterceptorService } from './core/services/http-interceptor.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ShopComponent,
-    ToolBarComponent
+    ToolBarComponent,
   ],
   imports: [
     NgbModule,
@@ -28,7 +29,13 @@ import { ToolBarComponent } from './tool-bar/tool-bar.component';
     CoreModule,
     HttpClientModule
   ],
-  providers: [],
+  providers:[
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:HttpInterceptorService,
+      multi:true
+    }
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
